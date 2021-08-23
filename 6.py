@@ -1,40 +1,25 @@
-import math
-items = int(input("Enter no of items : "))
-item = list(i for i in range(1,items+1))
-capacity = int(input("Enter Capacity : "))
-pi =list(map(int,input("Enter Profits : ").split()))
-w =list(map(float,input("Enter weights : ").split()))
-p_ratios = []
-table = []
-for i in range(items):
-  p_ratios.append((pi[i]/w[i]))
-  table.append((item[i],w[i],pi[i],p_ratios[i]))
-table = sorted(table,key=lambda x:x[3],reverse=True)
-tp = 0
-items_selected = list()
-if(items==0 or capacity == 0):
-  print("Incorrect data")
-for i in range(items):
-  if(table[i][1]<=capacity):
-    capacity-=table[i][1]
-    tp+=table[i][2]
-    items_selected.append([table[i][0],1])
-  else:
-    tp+=((capacity/table[i][1])*table[i][2])
-    items_selected.append([table[i][0],capacity/table[i][1]])
-    break
-items_selected = sorted(items_selected,key=lambda x:x[0])
-print("Item Fraction")
-for i in items_selected :
-    for j in i:
-        print(" "+str(j),end="\t")
-    print()
-print("Total Profit = ",tp)
-
-
-'''
-4
-6
-15 20 30 14
-3 2 10 2
-'''
+def fractional_knapsack(value, weight, capacity):
+    index = list(range(len(value)))
+    ratio = [v/w for v, w in zip(value, weight)]
+    index.sort(key=lambda i: ratio[i], reverse=True)
+    max_value = 0
+    fractions = [0]*len(value)
+    for i in index:
+        if weight[i] <= capacity:
+            fractions[i] = 1
+            max_value += value[i]
+            capacity -= weight[i]
+        else:
+            fractions[i] = capacity/weight[i]
+            max_value += value[i]*capacity/weight[i]
+            break
+    return max_value, fractions
+ 
+n = int(input('Enter number of items: '))
+value= list(map(int,input("Enter the values : ").split()))
+weight= list(map(int,input("Enter the weights : ").split()))
+capacity = int(input('Enter maximum weight: '))
+ 
+max_value, fractions = fractional_knapsack(value, weight, capacity)
+print('The maximum value of items that can be carried:', max_value)
+print('The fractions in which the items should be taken:', fractions)
