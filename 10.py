@@ -37,20 +37,18 @@ floydAlgo(graph)
 #         print("After Step",k+1,"Matrix A: ")
 #         printsol(graph,v)
         
-# def printSolution(dist):
-#     print("The shortest distances are : ")
-#     for i in range(V):
-#         for j in range(V):
-#             if(dist[i][j] == INF):
-#                  print("%7s" % ("∞"),end =" ")
-#             else:
-#                 print("%7d" % (dist[i][j]),end= " ")
-#             if j == V-1:
-#                 print("")
+# def printsol(graph,v):
+#     for i in range(v):
+#         for j in range(v):
+#             if(graph[i][j]==INF):
+#                 print(" %7s " %("INF"),end=" ")
+#             else :
+#                 print(" %7d " %(graph[i][j]),end=" ")
+#         print()
 # V = 4
 # INF = np.inf
-# graph = np.array([[0, 3, INF, 7],
+# graph = [[0, 3, INF, 7],
 #          [3, 0, 2, INF],
 #          [3, INF, 0, 1],
-#          [2, INF, INF, 0]])
-# floydWarshall(graph)
+#          [2, INF, INF, 0]]
+# floyd(graph,V)
