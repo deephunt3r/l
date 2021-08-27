@@ -1,11 +1,9 @@
 m = int(input("enter total memory : "))
 p = []
-pi = 1
 while(1):
     pm =int(input("enter the memory required for process "+str(pi)+" : "))
     if(pm<m):
         p.append(pm)
-        pi += 1
         m -= pm
         n = int(input("1.continue\n2.Exit\n"))
         if(n==1):continue
