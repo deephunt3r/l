@@ -1,22 +1,19 @@
-##################################################### WRONG ################################################################################################
-# fc = int(input("enter frames count : "))
-# fs = int(input("enter size of frame : "))
-# p = int(input("enter no of pages : "))
-# ps = list(map(int,input("Enter size of each page : ").split()))
-# free = list(map(int,input("Enter frames that are free to assign : ").split()))
-# pagetable = []
-# s = 0
-# for i in range(p):
-#     s += fs-ps[i]
-#     pagetable.append([i+1,free[i],fs-ps[i]])
-# for i in pagetable:
-#     print("page = "+str(i[0])+" frame = "+str(i[1])+" internalfragmentation = "+str(i[2]))
-# print("Total internal fragementation",s)
-
-# '''
-# 8
-# 1024
-# 4
-# 1020 1000 1024 1015
-# 3 0 7 2 5 1
-# '''
+memory = int(input("Enter memory size : "))
+pagesize = int(input("Enter page size : "))
+pn = int(input("Enter number of processes : "))
+print("Number of pages : ",int(memory/pagesize))
+process=[]
+l=0
+for i in range(pn):
+    print("Enter pages for process :",i)
+    pg=list(map(int,input().split()))
+    l+=len(pg)
+    if l<int(memory/pagesize):
+        process.append(pg)
+    else:
+        print("Memory is full")
+print("Enter logical address to get pysical address")
+pr=int(input("Enter process number :"))
+pnum=int(input("Enter page number : "))
+offset=int(input("Enter offset : "))
+print("pysical address :",(process[pr][pnum])*pagesize+offset)
