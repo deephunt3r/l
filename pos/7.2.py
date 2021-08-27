@@ -5,7 +5,7 @@ i_f = []
 p = []
 for i in range(n):
     s = int(input("enter size of process "+str(i)+" : "))
-    if(s<bs):
+    if(s<=bs):
        i_f.append(s)
        p.append(i)
 inf = 0
