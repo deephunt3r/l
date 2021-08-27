@@ -5,11 +5,11 @@ d = input("Enter direction left or right: ")
 R = sorted([i for i in a if i>head])
 L = sorted([i for i in a if i<head],reverse = True)
 if(d == "right"):
-    print("Sequence : ",[head]+R+L)
+    print("Sequence : ",R+L)
     print(n-head+n-min(L))
 else :
-    print("Sequence : ",[head]+L+R)
-    print(head+max(R))
+    print("Sequence : ",L+R)
+    print(max(R))
 '''
 199
 82 170 43 140 24 16 190
