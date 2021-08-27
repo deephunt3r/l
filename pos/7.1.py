@@ -2,7 +2,7 @@ m = int(input("enter total memory : "))
 p = []
 while(1):
     pm =int(input("enter the memory required for process "+str(pi)+" : "))
-    if(pm<m):
+    if(pm<=m):
         p.append(pm)
         m -= pm
         n = int(input("1.continue\n2.Exit\n"))
