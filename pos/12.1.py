@@ -8,5 +8,5 @@ for i in a:
     else :
         sum += head-i
     head = i
-print("sequence : ",[h]+a)
+print("sequence : ",a)
 print(sum)
