@@ -1,6 +1,6 @@
 def test(x):
     if(state[x]=="Hungry"):
-        if(state[(x+1)%n]!="Eating" and state[(x+n-1)%n]=="Eating"):
+        if(state[(x+1)%n]!="Eating" and state[(x+n-1)%n]!="Eating"):
            state[x]="Eating"
            print("Philospher "+str(x)+" is eating")
 def pickup(x):
