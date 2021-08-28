@@ -5,7 +5,7 @@ def linked():
         if(blocks[start]==None):
             count = 0
             trav = start
-            for j in range(m):
+            for j in range(bs):
                 if(blocks[j] == None and j!= start):
                     blocks[trav] = j
                     trav = j
