@@ -9,7 +9,7 @@ if(d == "right"):
     print(n-head+n-min(L))
 else :
     print("Sequence : ",L+R)
-    print(max(R))
+    print(head+max(R))
 '''
 199
 82 170 43 140 24 16 190
