@@ -34,7 +34,7 @@ while(count<n):
     for i in range(n):
         if(verify(need[i],available) and done[i]==False):
             for j in range(m):
-                available[j] += need[i][j]
+                available[j] += allocation[i][j]
             done[i] = True
             count += 1
             seq.append('p'+str(i+1))
